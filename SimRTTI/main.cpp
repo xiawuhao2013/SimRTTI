@@ -15,5 +15,6 @@ int main () {
 	PrintAllClasses ();
 
 	system ("pause");
+
 	return 0;
 }
