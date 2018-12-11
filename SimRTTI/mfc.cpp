@@ -43,13 +43,14 @@ namespace aq {
 		return TRUE;
 	}
 
+	// define list order
 	IMPLEMENT_DYNAMIC (CCmdTarget, CObject)
-	IMPLEMENT_DYNAMIC (CWinThread, CCmdTarget)
-	IMPLEMENT_DYNAMIC (CWinApp, CCmdTarget)
 	IMPLEMENT_DYNAMIC (CWnd, CCmdTarget)
 	IMPLEMENT_DYNAMIC (CFrameWnd, CWnd)
-	IMPLEMENT_DYNAMIC (CDocument, CCmdTarget)
 	IMPLEMENT_DYNAMIC (CView, CWnd)
+	IMPLEMENT_DYNAMIC (CDocument, CCmdTarget)
+	IMPLEMENT_DYNAMIC (CWinThread, CCmdTarget)
+	IMPLEMENT_DYNAMIC (CWinApp, CCmdTarget)
 
 	// global function
 	CWinApp* AfxGetApp () {

@@ -54,8 +54,12 @@ namespace aq {
 
 	class CObject {
 	public:
-		CObject::CObject () {}
-		CObject::~CObject () {}
+		CObject::CObject () { 
+			std::cout << "CObject Construction" << std::endl; 
+		}
+		CObject::~CObject () {
+			std::cout << "CObject Destruction" << std::endl;
+		}
 
 		virtual CRuntimeClass* GetRuntimeClass () const;
 
@@ -66,15 +70,23 @@ namespace aq {
 	class CCmdTarget :public CObject {
 		DECLARE_DYNAMIC (CCmdTarget)
 	public:
-		CCmdTarget::CCmdTarget () {}
-		CCmdTarget::~CCmdTarget () {}
+		CCmdTarget::CCmdTarget () {
+			std::cout << "CCmdTarget Construction" << std::endl;
+		}
+		CCmdTarget::~CCmdTarget () {
+			std::cout << "CCmdTarget Destruction" << std::endl;
+		}
 	};
 
 	class CWinThread :public CCmdTarget {
 		DECLARE_DYNAMIC (CWinThread)
 	public:
-		CWinThread::CWinThread () {}
-		CWinThread::~CWinThread () {}
+		CWinThread::CWinThread () {
+			std::cout << "CWinThread Construction" << std::endl;
+		}
+		CWinThread::~CWinThread () {
+			std::cout << "CWinThread Destruction" << std::endl;
+		}
 
 		virtual BOOL InitInstance () { return TRUE; }
 		virtual int Run () { return TRUE; }
@@ -85,8 +97,13 @@ namespace aq {
 	class CWinApp :public CWinThread {
 		DECLARE_DYNAMIC (CWinApp)
 	public:
-		CWinApp::CWinApp () { m_pCurrentWinApp = this; }
-		CWinApp::~CWinApp () {}
+		CWinApp::CWinApp () { 
+			std::cout << "CWinApp Construction" << std::endl;
+			m_pCurrentWinApp = this; 
+		}
+		CWinApp::~CWinApp () {
+			std::cout << "CWinApp Destruction" << std::endl;
+		}
 
 	public:
 		CWinApp* m_pCurrentWinApp;
@@ -101,15 +118,23 @@ namespace aq {
 	class CDocument :public CCmdTarget {
 		DECLARE_DYNAMIC (CDocument)
 	public:
-		CDocument::CDocument () {}
-		CDocument::~CDocument () {}
+		CDocument::CDocument () {
+			std::cout << "CDocument Construction" << std::endl;
+		}
+		CDocument::~CDocument () {
+			std::cout << "CDocument Destruction" << std::endl;
+		}
 	};
 
 	class CWnd :public CCmdTarget {
 		DECLARE_DYNAMIC (CWnd)
 	public:
-		CWnd::CWnd () {}
-		CWnd::~CWnd () {}
+		CWnd::CWnd () {
+			std::cout << "CWnd Construction" << std::endl;
+		}
+		CWnd::~CWnd () {
+			std::cout << "CWnd Destruction" << std::endl;
+		}
 		virtual BOOL Create ();
 		BOOL CreateEx ();
 		virtual BOOL PreCreateWindow ();
@@ -118,8 +143,12 @@ namespace aq {
 	class CFrameWnd :public CWnd {
 		DECLARE_DYNAMIC (CFrameWnd)
 	public:
-		CFrameWnd::CFrameWnd () {}
-		CFrameWnd::~CFrameWnd () {}
+		CFrameWnd::CFrameWnd () {
+			std::cout << "CFrameWnd Construction" << std::endl;
+		}
+		CFrameWnd::~CFrameWnd () {
+			std::cout << "CFrameWnd Destruction" << std::endl;
+		}
 		virtual BOOL Create ();
 		virtual BOOL PreCreateWindow ();
 	};
@@ -127,8 +156,12 @@ namespace aq {
 	class CView :public CWnd {
 		DECLARE_DYNAMIC (CView)
 	public:
-		CView::CView () {}
-		CView::~CView () {}
+		CView::CView () {
+			std::cout << "CView Construction" << std::endl;
+		}
+		CView::~CView () {
+			std::cout << "CView Destruction" << std::endl;
+		}
 	};
 
 	// global function
