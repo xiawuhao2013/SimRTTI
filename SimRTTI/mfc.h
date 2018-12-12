@@ -44,7 +44,7 @@ namespace aq {
 	static char _lpsz##class_name[]=#class_name; \
 	CRuntimeClass class_name::class##class_name{ \
 		_lpsz##class_name, sizeof(class_name), wSchema, pfnNew, \
-		RUNTIME_CLASS(class_name), NULL}; \
+		RUNTIME_CLASS(base_class_name), NULL}; \
 	static AFX_CLASSINIT _init_##class_name(&class_name::class##class_name); \
 	CRuntimeClass* class_name::GetRuntimeClass() const \
 								{ return &class_name::class##class_name; } \

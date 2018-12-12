@@ -13,6 +13,7 @@ namespace aq {
 
 	CMyFrameWnd::CMyFrameWnd () {
 		Create ();
+		std::cout << "CMyFrameWnd construction" << std::endl;
 	}
 
 	IMPLEMENT_DYNAMIC (CMyWinApp, CWinApp)
