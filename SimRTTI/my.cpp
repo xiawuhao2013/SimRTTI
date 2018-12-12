@@ -1,5 +1,7 @@
 #include "my.h"
 
+using namespace aq;
+
 namespace aq {
 
 	CMyWinApp theApp;
@@ -12,6 +14,11 @@ namespace aq {
 	CMyFrameWnd::CMyFrameWnd () {
 		Create ();
 	}
+
+	IMPLEMENT_DYNAMIC (CMyWinApp, CWinApp)
+	IMPLEMENT_DYNAMIC (CMyFrameWnd, CFrameWnd)
+	IMPLEMENT_DYNAMIC (CMyDoc, CDocument)
+	IMPLEMENT_DYNAMIC (CMyView, CView)
 
 	void PrintAllClasses () {
 		CRuntimeClass* pClass;

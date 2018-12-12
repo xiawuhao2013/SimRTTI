@@ -62,6 +62,7 @@ namespace aq {
 		}
 
 		virtual CRuntimeClass* GetRuntimeClass () const;
+		BOOL IsKindOf (CRuntimeClass* pClass) const;
 
 	public:
 		static CRuntimeClass classCObject;

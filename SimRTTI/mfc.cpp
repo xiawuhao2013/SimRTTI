@@ -21,6 +21,18 @@ namespace aq {
 		return &CObject::classCObject;
 	}
 
+	BOOL CObject::IsKindOf (CRuntimeClass* pClass) const {
+		CRuntimeClass* pClassThis = GetRuntimeClass ();
+		while ( pClassThis != NULL ) {
+			if ( pClass == pClassThis ) {
+				return TRUE;
+			}
+			pClassThis = pClassThis->m_pBaseClass;
+		}
+
+		return FALSE;
+	}
+
 	BOOL CWnd::Create () {
 		return TRUE;
 	}
